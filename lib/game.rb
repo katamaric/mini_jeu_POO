@@ -44,7 +44,7 @@ class Game
 
     enemies.each_with_index do |enemy, index|
       puts "#{enemy.show_state}"
-      puts "Press #{index} to attack #{enemy.name}."
+      puts "Press #{index + 1} to attack #{enemy.name}."
       print "\n"
     end
   end

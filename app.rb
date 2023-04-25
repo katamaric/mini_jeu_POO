@@ -9,7 +9,7 @@ player1 = Player.new("Z")
 player2 = Player.new("K")
 
 puts "Let's get ready to RUMBLEEEEE !"
-puts "Here are our two gladiators. Only 1 will ermerge out of the POO alive."
+puts "Here are our two gladiators. Only 1 will emerge out of the POO alive."
 print "\n"
 print "⠀⠀⠀⠀⣠⣶⣶⣤⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⣶⣶⣦⠀⠀
 ⠀⠀⠀⠀⢿⣿⣿⣿⠀⠀⠀⢀⣀⣠⣤⣄⠀⢿⣿⣿⣿⠇⠀

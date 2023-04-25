@@ -1,30 +1,30 @@
 class Player
-	attr_accessor :name, :life_points
+  attr_accessor :name, :life_points
  
   
-	def initialize(name_to_save, life_points_to_save = 10)
-		@name = name_to_save
-		@life_points = life_points_to_save
-	end
+  def initialize(name_to_save, life_points_to_save = 10)
+    @name = name_to_save
+    @life_points = life_points_to_save
+  end
 
 
-	def show_state
+  def show_state
     if @life_points <= 0
       return "#{@name} has no more life points. They have perished."
     else
-		  return "#{@name} has #{@life_points} life points. Stay strong."
+      return "#{@name} has #{@life_points} life points. Stay strong."
     end
-	end
+  end
 
 
-	def gets_damage(ouch)
-		@life_points -= ouch 
+  def gets_damage(ouch)
+    @life_points -= ouch 
 
-		if @life_points <= 0
-			puts "#{@name} is dead.."
-		else 
-			puts "#{@name} has #{@life_points}."
-		end
+    if @life_points <= 0
+      puts "#{@name} is dead.."
+    else 
+      puts "#{@name} has #{@life_points}."
+    end
   end
 
 
@@ -33,36 +33,36 @@ class Player
   end
 
 
-	def attacks(player2)
-		puts "#{@name} attacks #{player2.name}."
-		
+  def attacks(player2)
+    puts "#{@name} attacks #{player2.name}."
+
     damage_inflicted = compute_damage
-		puts "#{@name} inflicts #{damage_inflicted} points of damage to #{player2.name}."
+    puts "#{@name} inflicts #{damage_inflicted} points of damage to #{player2.name}."
     player2.life_points -= damage_inflicted
 
-		if player2.life_points <= 0
+    if player2.life_points <= 0
       print "\n"
       puts "#{player2.name} has been eliminated!"
     end
-	end
+  end
 
 end
 
 
 class HumanPlayer < Player
-	attr_accessor :weapon_level
+  attr_accessor :weapon_level
 
-	def initialize(name_to_save, life_points_to_save = 100, weapon_level_to_save = 1)
-		@life_points = life_points_to_save
-		@weapon_level = weapon_level_to_save
+  def initialize(name_to_save, life_points_to_save = 100, weapon_level_to_save = 1)
+    @life_points = life_points_to_save
+    @weapon_level = weapon_level_to_save
 
-		super(name_to_save, life_points_to_save)
-	end
+    super(name_to_save, life_points_to_save)
+  end
 
 
-	def compute_damage
-		return rand(1..6) * @weapon_level
-	end
+  def compute_damage
+    return rand(1..6) * @weapon_level
+  end
 
 
   def search_weapon
@@ -84,7 +84,7 @@ class HumanPlayer < Player
     if health_pack_found == 1
       puts "Aw :-( You didn't find anything. Sorry. Better luck next time."
     elsif (2...5).include?(health_pack_found)
-			@life_points += 50 
+      @life_points += 50 
       puts "Congratulations! You found a 50HP health pack. Your health has replenished."
     else
       @life_points += 80

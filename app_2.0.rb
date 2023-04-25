@@ -66,8 +66,11 @@ while player.life_points > 0 && (enemy_1.life_points > 0 || enemy_2.life_points 
   break if (enemy_1.life_points <= 0 && enemy_2.life_points <= 0)
   puts "Your enemies are after you!"
   enemies.each do |enemy|
-    if player.life_points > 0 && enemy.life_points > 0
-      enemy.attacks(player)
+    if player.life_points > 0
+      if enemy.life_points > 0
+        enemy.attacks(player)
+      end
+      
     else
       puts "You have died."
     end

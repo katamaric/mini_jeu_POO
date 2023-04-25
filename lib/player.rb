@@ -41,6 +41,7 @@ class Player
     player2.life_points -= damage_inflicted
 
 		if player2.life_points <= 0
+      print "\n"
       puts "#{player2.name} has been eliminated!"
     end
 	end

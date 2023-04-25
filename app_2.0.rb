@@ -69,13 +69,13 @@ while player.life_points > 0 && (enemy_1.life_points > 0 || enemy_2.life_points 
     if player.life_points > 0 && enemy.life_points > 0
       enemy.attacks(player)
     else
-      "You have died."
+      puts "You have died."
     end
   end
 end  
 
 if player.life_points <= 0
-  puts "You have died. The enemies have won."
+  puts "The enemies have won."
 else
   puts "Congratulations #{player.name}, you've defeated the enemies and survived!"
 end

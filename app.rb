@@ -34,5 +34,14 @@ while player1.life_points > 0 && player2.life_points > 0
     player1.attacks(player2)
     break if player2.life_points <= 0
     player2.attacks(player1)
+    break if player1.life_points <= 0
+    print "\n"
+    puts "******* STATUS UPDATE *******"
     puts "#{player1.show_state} #{player2.show_state}"
+end
+
+if player1.life_points > player2.life_points
+  puts "#{player1.name} has come out victorious."
+else
+  puts "#{player2.name} has vanquished!"
 end
